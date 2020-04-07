@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-privacy-message-example",
+  "version": "0.0.1",
+  "description": "I want to learn how to create a NUXT module from this template, which has the components and the store functionality built in.",
+  "author": "Moritz Graf",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build --modern=client",
+    "start": "nuxt start --modern=client",
+    "generate": "nuxt generate --modern=client",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxtjs/svg": "^0.1.6",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.4.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.12.2",
+    "nuxt-start": "^2.11.0",
+    "nuxt-vuex-localstorage": "^1.2.6",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.6",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.16.4",
+    "sass-loader": "^8.0.2"
+  }
+}
