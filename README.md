@@ -50,6 +50,7 @@ My progress is quite okay! But how do I read and emit the store with the namespa
 $store.state.cookies.collapsed
 this.$store.commit('cookies/saveSelection', newVal)
 ```
+See [cookieMessage.vue in nuxt-privacy-message](https://github.com/mmoollllee/nuxt-privacy-message/blob/master/components/lib/cookieMessage.vue)
 
 ## ToDo
 - Integrate example of google analytics initaliziation after it beeing allowed
