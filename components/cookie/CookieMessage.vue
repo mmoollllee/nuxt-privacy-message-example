@@ -146,10 +146,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
+// Component for the Checkbox Group logic that emmits it's state to (current) main component
 import CheckboxGroup from './CheckboxGroup.vue'
 
-// Data from config
+// Data from config. This will be configured in nuxt.config.js as soon as the module is ready
 import cookieOptions from '~/config/cookieMessage.json'
+const hideOnScroll = true
 
 export default Vue.extend({
   components: {
@@ -158,6 +160,7 @@ export default Vue.extend({
   data() {
     return {
       cookieGroups: cookieOptions.cookieGroups,
+      hideOnScroll,
       selected: this.$store.state.cookies.enabled,
       windowTop: 0
     }
@@ -165,8 +168,8 @@ export default Vue.extend({
 
   computed: {
     messageVisibile(): Boolean {
-      // true if this.close() was called before
-      // && nuxt-vuex-localstorage is setup
+      // nuxt-vuex-localstorage is setup
+      // && this.close() was NOT called before
       return (
         this.$store.state.cookies.status &&
         !this.$store.state.cookies.messageShown
@@ -176,16 +179,20 @@ export default Vue.extend({
   },
   watch: {
     selected(newVal, oldVal) {
-      // Save
+      // Save selection as soon as it changes.
       this.$store.commit('cookies/saveSelection', newVal)
     }
   },
 
   mounted() {
-    window.addEventListener('scroll', this.onScroll)
+    if (this.hideOnScroll) {
+      window.addEventListener('scroll', this.onScroll)
+    }
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
+    if (this.hideOnScroll) {
+      window.removeEventListener('scroll', this.onScroll)
+    }
   },
   methods: {
     onScroll(e: any) {
@@ -193,10 +200,11 @@ export default Vue.extend({
         window.scrollY /* or: e.target.documentElement.scrollTop */
     },
     collapse(): any {
+      // toggle collapse state true/false
       this.$store.commit('cookies/collapse')
     },
     close(): any {
-      // Close the Message and save that information in store(age)
+      // Close the Message and save that information in store
       this.$store.commit('cookies/closeMessage')
     },
     newSelection(newVal: Array<String>): void {
