@@ -21,56 +21,29 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Dependencies
+This module will depend on the following tools:
+- [Nuxt 2](https://github.com/nuxt/nuxt.js)
+- [nuxt-vuex-localstorage](https://github.com/rubystarashe/nuxt-vuex-localstorage)
+- [Bootstrap](https://github.com/twbs/bootstrap) but only in case of the CSS.
+
 ## Configuration
 
 This template is packed with some tools for a faster workflow.
 
 ### General
 - `nuxt.config.js`
-- `config/infos.json` for contact information that will be used in different places site-wide
-- `menus.json` to generate main menu, footer menu and social menu
-
-### Image-Sizes
-- Check `compontents/lib/ImageSet.vue` to adjust image-sizes for your custom `src-set`
-
-### Webfonts
-- Add preconnect URL for external Webfonts to `nuxt.config.js` in `head.link`
-- Use [local-webfont](https://github.com/swissspidy/local-webfont) to download webfonts css and add `display: swap` to css file (see: `css/_font.scss`)
-- Add Custom Families to `nuxt.config.js` in `webfontloader` (see: [nuxt-webfontloader](https://github.com/Developmint/nuxt-webfontloader))
-
-### Favicon & Manifest
-- Replace `static/favicon.svg`
-- Change `config/faviconDescription.json` or [generate new one](https://github.com/pimlie/nuxt-rfg-icon#rfg)
-- `favicon.ico` will be generated through `nuxt-rfg`
-
-### Sitemap
-- Change settings in `nuxt.config.js`
-- Use `sitemap.routes` to overwrite priorities or add more URLs
-
-### Contact Form
-- Change Message Body and email address' in `static/mailer.php`
-
-### [Icon-font-generator](https://github.com/Hammie/icon-font-generator)
-
-- Generates Icon Font from `assets/icons/*.svg` to `static/fonts/icon-font.*`.
-- Uses `config/codepoints.json` to map unicode characters for the font.
-- Generates CSS Classes for different icons to `css/_icons.scss` from template placed in `helpers/icon-font-template.hbs`
-- Generates list of Icons to `helpers/icons.json`. Used in `icons.vue` page to show all icons.
-See `package.json` scripts key for options.
-
-``` bash
-npm run icons
-```
 
 ### Cookie Message
-- Every key in `cookieGroups` in `config/cookieMessage.json` will be a group of services in the message. See the example to create new groups.
+- Every key in `cookieGroups` in `config/cookieMessage.json` will be a group of services in the message. See the example to create new groups. This is needed for
 - Use the store service to execute code when something is enabled.
 - see `privacy.vue` for related privacy informations
 
 
 ## ToDo
-- Remove Hammer.js?
-- Replace Fancybox with https://fancyapps.com/next/ and drop jQuery
-- Cookie Message as extra component
-- Remove Swiper?
-- Remove Vue Bootstrap?
+- Integrate example of google analytics initaliziation after it beeing allowed
+- Wipe out CSS.
+- Integrate Icons as SVGs not as webfont
+
+## Open Questions
+- Should Bootstrap be delivered as dependency with the module? I guess the user should be free to use whatever other CSS?
