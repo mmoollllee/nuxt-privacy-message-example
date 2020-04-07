@@ -41,6 +41,15 @@ This template is packed with some tools for a faster workflow.
 - Use the store service to execute code when something is enabled.
 - see `privacy.vue` for related privacy informations
 
+## Current progess
+I tried to use the [template](https://github.com/carepenny/nuxt-module) and [tutorial](https://medium.com/carepenny/creating-a-nuxt-module-1c6e3cdf1037) by Carepenny.
+My progress is quite okay! But how do I read and emit the store with the namespacing?
+
+**If I implement the store with namespacing as he does, how will the following lines be changed to make it work, without creating helper-plugins for everything?**
+```
+$store.state.cookies.collapsed
+this.$store.commit('cookies/saveSelection', newVal)
+```
 
 ## ToDo
 - Integrate example of google analytics initaliziation after it beeing allowed
