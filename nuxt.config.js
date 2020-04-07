@@ -1,7 +1,19 @@
 // Use description from package.json as page title
 const title = process.env.npm_package_description || ''
 
+/* nuxt.config.js */
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/<repository-name>/'
+        }
+      }
+    : {}
+
 export default {
+  ...routerBase,
   mode: 'universal',
   head: {
     title,
