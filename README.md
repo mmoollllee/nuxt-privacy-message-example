@@ -2,6 +2,8 @@
 
 > I want to learn how to create a NUXT module from this template, which has the components and the store functionality built in.
 
+[**Demo**](https://mmoollllee.github.io/nuxt-privacy-message-example/)
+
 ## Build Setup
 
 ``` bash
