@@ -35,7 +35,8 @@ export default {
     [
       'nuxt-vuex-localstorage',
       {
-        localStorage: ['cookies']
+        localStorage: ['cookies'],
+        mode: 'debug'
       }
     ],
     '@nuxtjs/svg'
